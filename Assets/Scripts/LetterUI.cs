@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class LetterUI : MonoBehaviour
 {
@@ -182,8 +182,8 @@ public class LetterUI : MonoBehaviour
             currentWords.Add(word);
 
             GameObject academy = GameObject.Find("AcademyCode");
-            Academy academyScript = academy.GetComponent<Academy>();
-            academyScript.CheckTile(currentWords);
+            //Academy academyScript = academy.GetComponent<Academy>();
+            // academyScript.CheckTile(currentWords);
 
             ClearBlocks();
         }

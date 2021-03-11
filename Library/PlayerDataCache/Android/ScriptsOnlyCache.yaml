@@ -25,20 +25,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
-    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/Main.unity:
+    Assets/Scenes/ECD.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -47,40 +42,34 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11326}
-    - Class: 114
       Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11420}
+      Script: {instanceID: 11422}
     - Class: 114
-      Script: {instanceID: 11486}
+      Script: {instanceID: 11488}
     - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11786}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11848}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12200}
     - Class: 114
-      Script: {instanceID: 12634}
+      Script: {instanceID: 12636}
     - Class: 114
-      Script: {instanceID: 12710}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12916}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 13094}
+      Script: {instanceID: 13096}
     - Class: 114
-      Script: {instanceID: 14058}
+      Script: {instanceID: 14542}
     - Class: 114
-      Script: {instanceID: 14150}
+      Script: {instanceID: 14584}
     - Class: 114
-      Script: {instanceID: 14152}
+      Script: {instanceID: 14586}
     - Class: 114
-      Script: {instanceID: 14154}
-    - Class: 114
-      Script: {instanceID: 14164}
+      Script: {instanceID: 14588}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -181,6 +170,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 7bbd447afec69e34950bf69d40ac12ab
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LetterUI
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -555,5 +550,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/Main.unity
+  - Assets/Scenes/ECD.unity
   playerPath: /home/jonathan/Work/Ecomap/Builds/v7.apk
