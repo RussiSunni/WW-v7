@@ -30,19 +30,13 @@ public class GameControl : MonoBehaviour
     string word;
     char[] board;
 
-    public Image centerWordImage, leftWordImage, rightWordImage, backgroundWordImage;
-    Sprite catSprite, dogSprite, bearSprite, frogSprite, goatSprite, duckSprite, snakeSprite, mouseSprite, horseSprite, tigerSprite, zebraSprite, lizardSprite, donkeySprite, monkeySprite, wolfSprite, batSprite, camelSprite, chickenSprite, dolphinSprite, sharkSprite, forestSprite;
-    Sprite motherSprite, sisterSprite, familySprite;
+
 
     public Animator fairyAnimator;
 
 
     void Start()
     {
-        centerWordImage.preserveAspect = true;
-        leftWordImage.preserveAspect = true;
-        rightWordImage.preserveAspect = true;
-        backgroundWordImage.preserveAspect = false;
 
         Col1.Add(A4);
         Col1.Add(A5);
@@ -109,36 +103,6 @@ public class GameControl : MonoBehaviour
         Rows.Add(Row2);
         Rows.Add(Row3);
 
-        ClearImage(centerWordImage);
-        ClearImage(leftWordImage);
-        ClearImage(rightWordImage);
-
-
-        // database design
-        // one table. fields for 
-        // ID
-        // -isFairy
-        // -sprite
-        // -word
-        // -combos?
-
-        // Load wordImages list from the database lookup table. Maybe remove this step sometime
-        // foreach (var dictionaryLookup in dictionaryLookups)
-        // {
-        //     wordImages.Add(dictionaryLookup.Key, Resources.Load<Sprite>("Images/Animals/" + dictionaryLookup.Value));
-        // }
-
-        //   foreach (var dictionaryLookup in dictionaryLookupsList)
-        //  {
-        //      wordImages.Add(dictionaryLookup.Name, Resources.Load<Sprite>("Images/Animals/" + dictionaryLookup.Sprite));
-        //  }
-
-        // testing word / image db
-        // foreach (var dictionaryLookup in dictionaryLookups)
-        // {
-        //     print(dictionaryLookup.Key + " " + dictionaryLookup.Value);
-        // }
-
 
     }
 
@@ -160,13 +124,11 @@ public class GameControl : MonoBehaviour
     // void Update()
     public void UpdateStage()
     {
-
-
         var fairy = GameObject.Find("Fairy");
         Fairy fairyScript = fairy.GetComponent<Fairy>();
 
         // reset Fairy animation
-        fairyScript.NoAnimation();
+        //  fairyScript.NoAnimation();
 
         // currentWords = words that have been made
         // currentWordSprites = current sprites that should be showing on the stage
@@ -218,58 +180,21 @@ public class GameControl : MonoBehaviour
         // for this string in Current Words, use this
         for (int i = 0; i < currentWords.Count; i++)
         {
-            // if (!currentWordSprites.Contains(wordImages[currentWords[i]]))
-            //     currentWordSprites.Add(wordImages[currentWords[i]]);
 
             foreach (var lookup in dictionaryLookupsList)
             {
                 if (currentWords[i] == lookup.Name)
                 {
-                    if (lookup.isFairy == false)
-                        currentWordSprites.Add(Resources.Load<Sprite>("Images/Sprites/" + lookup.Sprite));
-                    else
-                    {
-                        currentWordFairyAnimations.Add(lookup.Sprite);
-                    }
+                    print(currentWords[i]);
+                    fairyScript.Animation(currentWords[i]);
                 }
             }
-            //  print(currentWordSprites[i]);  //  fairyScript.NoAnimation();
 
-            // if (!currentWordSprites.Contains(wordImages[currentWords[i]]))
-            //   currentWordSprites.Add(wordImages[currentWords[i]]);
         }
 
 
 
-        // //RULES ----------------     
-
-        if (currentWordSprites.Count > 1)
-        {
-            ClearImage(centerWordImage);
-            AddImage(leftWordImage, currentWordSprites[0]);
-            AddImage(rightWordImage, currentWordSprites[1]);
-            // ClearImage(backgroundWordImage);
-        }
-        else if (currentWordSprites.Count == 1)
-        {
-            print("word");
-            ClearImage(leftWordImage);
-            ClearImage(rightWordImage);
-            AddImage(centerWordImage, currentWordSprites[0]);
-            // ClearImage(backgroundWordImage);
-        }
-        else
-        {
-            ClearImage(centerWordImage);
-            ClearImage(leftWordImage);
-            ClearImage(rightWordImage);
-            // ClearImage(backgroundWordImage);
-        }
-
-        if (currentWordFairyAnimations.Count == 1)
-        {
-            fairyScript.Animation(currentWordFairyAnimations[0]);
-        }
+        // // //RULES ----------------     
 
 
 
@@ -280,21 +205,6 @@ public class GameControl : MonoBehaviour
         currentWords.Clear();
     }
 
-
-    // private bool Search(char[] board, IDictionary<string, string> dictionaryLookups)
-    // {
-    //     for (int i = 0; i < board.Length; i++)
-    //     {
-    //         foreach (KeyValuePair<string, string> dictionaryLookup in dictionaryLookups)
-    //         {
-    //             if (board[i] == dictionaryLookup.Key[0] && dfs(board, i, 0, dictionaryLookup.Key))
-    //             {
-    //                 //print(words[h]);
-    //             }
-    //         }
-    //     }
-    //     return false;
-    // }
 
 
     private bool Search(char[] board, List<DictionaryLookup> dictionaryLookupsList)
@@ -314,36 +224,9 @@ public class GameControl : MonoBehaviour
 
 
 
-
-
-    // public bool dfs(char[] board, int i, int count, string word)
-    // {
-    //     //    print(word);
-
-    //     if (count == word.Length)
-    //         return true;
-
-    //     if (i < 0 || i >= board.Length || board[i] != word[count])
-    //         return false;
-
-
-    //     char temp = board[i];
-    //     board[i] = ' ';
-
-    //     bool found = dfs(board, i + 1, count + 1, word);
-
-    //     board[i] = temp;
-
-    //     if (found && !currentWords.Contains(word))
-    //     {
-    //         currentWords.Add(word);
-    //     }
-    //     return found;
-    // }
-
     public bool dfs(char[] board, int i, int count, string word)
     {
-        print(word);
+        // print(word);
 
         if (count == word.Length)
             return true;
@@ -369,214 +252,4 @@ public class GameControl : MonoBehaviour
     }
 
 
-
-
-
-
-    // optimise to a loop
-    public void pressAButton()
-    {
-        GameObject aBlock = Instantiate(Resources.Load("Prefabs/Letters/a")) as GameObject;
-        //aBlock.transform.SetParent(A4);
-        setParent1(aBlock);
-    }
-    public void pressBButton()
-    {
-        GameObject bBlock = Instantiate(Resources.Load("Prefabs/Letters/b")) as GameObject;
-        setParent1(bBlock);
-    }
-    public void pressCButton()
-    {
-        GameObject cBlock = Instantiate(Resources.Load("Prefabs/Letters/c")) as GameObject;
-        setParent1(cBlock);
-    }
-    public void pressDButton()
-    {
-        GameObject dBlock = Instantiate(Resources.Load("Prefabs/Letters/d")) as GameObject;
-        setParent1(dBlock);
-    }
-    public void pressEButton()
-    {
-        GameObject eBlock = Instantiate(Resources.Load("Prefabs/Letters/e")) as GameObject;
-        setParent1(eBlock);
-    }
-    public void pressFButton()
-    {
-        GameObject fBlock = Instantiate(Resources.Load("Prefabs/Letters/f")) as GameObject;
-        setParent1(fBlock);
-    }
-    public void pressGButton()
-    {
-        GameObject gBlock = Instantiate(Resources.Load("Prefabs/Letters/g")) as GameObject;
-        setParent1(gBlock);
-    }
-    public void pressHButton()
-    {
-        GameObject hBlock = Instantiate(Resources.Load("Prefabs/Letters/h")) as GameObject;
-        setParent1(hBlock);
-    }
-    public void pressIButton()
-    {
-        GameObject iBlock = Instantiate(Resources.Load("Prefabs/Letters/i")) as GameObject;
-        setParent1(iBlock);
-    }
-    public void pressJButton()
-    {
-        GameObject jBlock = Instantiate(Resources.Load("Prefabs/Letters/j")) as GameObject;
-        setParent1(jBlock);
-    }
-    public void pressKButton()
-    {
-        GameObject kBlock = Instantiate(Resources.Load("Prefabs/Letters/k")) as GameObject;
-        setParent1(kBlock);
-    }
-    public void pressLButton()
-    {
-        GameObject lBlock = Instantiate(Resources.Load("Prefabs/Letters/l")) as GameObject;
-        setParent1(lBlock);
-    }
-    public void pressMButton()
-    {
-        GameObject mBlock = Instantiate(Resources.Load("Prefabs/Letters/m")) as GameObject;
-        setParent1(mBlock);
-    }
-    public void pressNButton()
-    {
-        GameObject nBlock = Instantiate(Resources.Load("Prefabs/Letters/n")) as GameObject;
-        setParent2(nBlock);
-    }
-    public void pressOButton()
-    {
-        GameObject oBlock = Instantiate(Resources.Load("Prefabs/Letters/o")) as GameObject;
-        setParent2(oBlock);
-    }
-    public void pressPButton()
-    {
-        GameObject pBlock = Instantiate(Resources.Load("Prefabs/Letters/p")) as GameObject;
-        setParent2(pBlock);
-    }
-    public void pressQButton()
-    {
-        GameObject qBlock = Instantiate(Resources.Load("Prefabs/Letters/q")) as GameObject;
-        setParent2(qBlock);
-    }
-    public void pressRButton()
-    {
-        GameObject rBlock = Instantiate(Resources.Load("Prefabs/Letters/r")) as GameObject;
-        setParent2(rBlock);
-    }
-    public void pressSButton()
-    {
-        GameObject sBlock = Instantiate(Resources.Load("Prefabs/Letters/s")) as GameObject;
-        setParent2(sBlock);
-    }
-    public void pressTButton()
-    {
-        GameObject tBlock = Instantiate(Resources.Load("Prefabs/Letters/t")) as GameObject;
-        setParent2(tBlock);
-    }
-    public void pressUButton()
-    {
-        GameObject uBlock = Instantiate(Resources.Load("Prefabs/Letters/u")) as GameObject;
-        setParent2(uBlock);
-    }
-    public void pressVButton()
-    {
-        GameObject vBlock = Instantiate(Resources.Load("Prefabs/Letters/v")) as GameObject;
-        setParent2(vBlock);
-    }
-    public void pressWButton()
-    {
-        GameObject wBlock = Instantiate(Resources.Load("Prefabs/Letters/w")) as GameObject;
-        setParent2(wBlock);
-    }
-    public void pressXButton()
-    {
-        GameObject xBlock = Instantiate(Resources.Load("Prefabs/Letters/x")) as GameObject;
-        setParent2(xBlock);
-    }
-    public void pressYButton()
-    {
-        GameObject yBlock = Instantiate(Resources.Load("Prefabs/Letters/y")) as GameObject;
-        setParent2(yBlock);
-    }
-    public void pressZButton()
-    {
-        GameObject zBlock = Instantiate(Resources.Load("Prefabs/Letters/z")) as GameObject;
-        setParent2(zBlock);
-    }
-
-
-    // for 3 rows
-    private void setParent1(GameObject block)
-    {
-        for (int i = 2; i < Rows.Count; i--)
-        {
-            for (int h = 0; h < Rows[i].Count; h++)
-            {
-                if (Rows[i][h].childCount == 0)
-                {
-                    block.transform.SetParent(Rows[i][h]);
-                    break;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-        }
-    }
-
-    private void setParent2(GameObject block)
-    {
-        for (int i = 2; i < Rows.Count; i--)
-        {
-            for (int h = 7; h < Rows[i].Count; h--)
-            {
-                if (Rows[i][h].childCount == 0)
-                {
-                    block.transform.SetParent(Rows[i][h]);
-                    break;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-        }
-    }
-
-    //1 ROW---------------------
-
-    // private void setParent1(GameObject block)
-    // {
-    //     for (int h = 0; h < Row3.Count; h++)
-    //     {
-    //         if (Row3[h].childCount == 0)
-    //         {
-    //             block.transform.SetParent(Row3[h]);
-    //             break;
-    //         }
-    //         else
-    //         {
-    //             continue;
-    //         }
-    //     }
-    // }
-
-    // private void setParent2(GameObject block)
-    // {
-    //     for (int h = 7; h < Row3.Count; h--)
-    //     {
-    //         if (Row3[h].childCount == 0)
-    //         {
-    //             block.transform.SetParent(Row3[h]);
-    //             break;
-    //         }
-    //         else
-    //         {
-    //             continue;
-    //         }
-    //     }
-    // }
 }

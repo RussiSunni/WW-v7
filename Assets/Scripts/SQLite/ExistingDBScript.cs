@@ -30,7 +30,7 @@ public class ExistingDBScript : MonoBehaviour
 
     private void ToConsole(string msg)
     {
-        DebugText.text += System.Environment.NewLine + msg;
+        // DebugText.text += System.Environment.NewLine + msg;
         Debug.Log(msg);
     }
 }

@@ -10,7 +10,7 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler // re
     private Vector3 firstTouchPosition;
     private Vector3 finalTouchPosition;
     float swipeAngle = 0;
-    Transform B4;
+
 
     int currentRow;
     int currentCol;
@@ -20,7 +20,6 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler // re
     void Start()
     {
         block = this.gameObject;
-        B4 = GameObject.Find("B4").transform;
     }
 
     // UI elements
@@ -39,6 +38,7 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler // re
     void CalculateAngle()
     {
         swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 180 / Mathf.PI;
+
         MovePieces();
     }
 
