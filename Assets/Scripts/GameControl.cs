@@ -21,16 +21,11 @@ public class GameControl : MonoBehaviour
     public List<Transform> Row2 = new List<Transform>();
     public List<Transform> Row3 = new List<Transform>();
     public List<List<Transform>> Rows = new List<List<Transform>>();
-    List<Sprite> currentWordSprites = new List<Sprite>();
-    public static List<string> currentWordFairyAnimations = new List<string>();
-    List<string> currentWords = new List<string>();
-    IDictionary<string, Sprite> wordImages = new Dictionary<string, Sprite>();
+    public static List<string> currentWords = new List<string>();
     public static List<DictionaryLookup> dictionaryLookupsList = new List<DictionaryLookup>();
 
     string word;
     char[] board;
-
-
 
     public Animator fairyAnimator;
 
@@ -128,14 +123,9 @@ public class GameControl : MonoBehaviour
         Fairy fairyScript = fairy.GetComponent<Fairy>();
 
         // reset Fairy animation
-        //  fairyScript.NoAnimation();
+        fairyScript.NoAnimation();
 
-        // currentWords = words that have been made
-        // currentWordSprites = current sprites that should be showing on the stage
-        // wordImages = the db of the dictionary, that is loaded into memory in this class
-
-
-        // maybe a list of objects. Include isFairy.
+        // currentWords = words that have been made    
 
 
         // load current board
@@ -150,7 +140,7 @@ public class GameControl : MonoBehaviour
             }
         }
 
-        // // Row 2
+        // Row 2
         char[] board2 = new char[8];
         for (int i = 0; i < 8; i++)
         {
@@ -180,28 +170,19 @@ public class GameControl : MonoBehaviour
         // for this string in Current Words, use this
         for (int i = 0; i < currentWords.Count; i++)
         {
-
             foreach (var lookup in dictionaryLookupsList)
             {
                 if (currentWords[i] == lookup.Name)
                 {
                     print(currentWords[i]);
-                    fairyScript.Animation(currentWords[i]);
+                    print(lookup.AnimationClipParameter);
+                    fairyScript.Animation(lookup.AnimationClipParameter);
                 }
             }
-
         }
 
 
-
-        // // //RULES ----------------     
-
-
-
-        // clear for next update
-        currentWordFairyAnimations.Clear();
-
-        currentWordSprites.Clear();
+        // // //RULES ----------------         
         currentWords.Clear();
     }
 

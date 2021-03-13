@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8249B26C-DDCE-28BC-3E5E-99B579982DE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Animation.Samples.Runtime", "Unity.2D.Animation.Samples.Runtime.csproj", "{845C09A8-A019-829F-1BCE-C682CCB265E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Animation.Samples.Editor", "Unity.2D.Animation.Samples.Editor.csproj", "{20856076-7E8B-0734-11F9-4046DEDC6CE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{8249B26C-DDCE-28BC-3E5E-99B579982DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8249B26C-DDCE-28BC-3E5E-99B579982DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8249B26C-DDCE-28BC-3E5E-99B579982DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845C09A8-A019-829F-1BCE-C682CCB265E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845C09A8-A019-829F-1BCE-C682CCB265E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845C09A8-A019-829F-1BCE-C682CCB265E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845C09A8-A019-829F-1BCE-C682CCB265E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20856076-7E8B-0734-11F9-4046DEDC6CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20856076-7E8B-0734-11F9-4046DEDC6CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20856076-7E8B-0734-11F9-4046DEDC6CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20856076-7E8B-0734-11F9-4046DEDC6CE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

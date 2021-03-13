@@ -10,25 +10,21 @@ public class Fairy : MonoBehaviour
     private void Start()
     {
         animator.SetBool("isJump", false);
-        animator.SetBool("isHi", false);
+        animator.SetBool("isHello", false);
+        animator.SetBool("isSit", false);
+
     }
 
     public void NoAnimation()
     {
         animator.SetBool("isJump", false);
-        animator.SetBool("isHi", false);
+        animator.SetBool("isHello", false);
+        animator.SetBool("isSit", false);
     }
-
-    // public void WaveAnimation()
-    // {
-    //     animator.SetBool("isHi", true);
-    //     //        print("hi");
-    // }
 
     public void Animation(string word)
     {
         animator.SetBool(word, true);
-        GameControl.currentWordFairyAnimations.Clear();
+        GameControl.currentWords.Clear();
     }
-
 }
