@@ -20,6 +20,11 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isJump", false);
         animator.SetBool("isHello", false);
         animator.SetBool("isSit", false);
+        animator.SetBool("isBus", false);
+        animator.SetBool("isTail", false);
+        animator.SetBool("isQueen", false);
+        animator.SetBool("isNight", false);
+        animator.SetBool("isSalt", false);
     }
 
     public void Animation(string word)

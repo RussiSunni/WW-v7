@@ -7,6 +7,8 @@ public class DictionaryLookup
     public int Id { get; set; }
     public string Name { get; set; }
     public string AnimationClipParameter { get; set; }
+    public bool Subject { get; set; }
+
 
 
     public override string ToString()

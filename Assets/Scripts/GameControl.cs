@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
-    //public Transform wordPanel1, wordPanel2;
+
     public Transform A4, A5, A6, B4, B5, B6, C4, C5, C6, D4, D5, D6, E4, E5, E6, F4, F5, F6, G4, G5, G6, H4, H5, H6;
     public Transform A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     public List<Transform> Col1 = new List<Transform>();
@@ -101,20 +101,6 @@ public class GameControl : MonoBehaviour
 
     }
 
-    private void ClearImage(Image image)
-    {
-        var tempColor = image.color;
-        tempColor.a = 0f;
-        image.color = tempColor;
-    }
-
-    private void AddImage(Image image, Sprite sprite)
-    {
-        var tempColor = image.color;
-        tempColor.a = 1f;
-        image.color = tempColor;
-        image.sprite = sprite;
-    }
 
     // void Update()
     public void UpdateStage()
@@ -122,8 +108,17 @@ public class GameControl : MonoBehaviour
         var fairy = GameObject.Find("Fairy");
         Fairy fairyScript = fairy.GetComponent<Fairy>();
 
+        var subject = GameObject.Find("Subject");
+        Subject subjectScript = subject.GetComponent<Subject>();
+
+        var soundManager = GameObject.Find("SoundManager");
+        SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
+
         // reset Fairy animation
         fairyScript.NoAnimation();
+
+        // reset subject animation
+        subjectScript.NoAnimation();
 
         // currentWords = words that have been made    
 
@@ -172,11 +167,20 @@ public class GameControl : MonoBehaviour
         {
             foreach (var lookup in dictionaryLookupsList)
             {
+
                 if (currentWords[i] == lookup.Name)
                 {
-                    print(currentWords[i]);
-                    print(lookup.AnimationClipParameter);
-                    fairyScript.Animation(lookup.AnimationClipParameter);
+                    if (lookup.Subject)
+                    {
+                        subjectScript.Animation(lookup.AnimationClipParameter);
+                    }
+                    else
+                    {
+                        // print(currentWords[i]);
+                        // print(lookup.AnimationClipParameter);
+                        fairyScript.Animation(lookup.AnimationClipParameter);
+                        soundManagerScript.playSound(soundManagerScript.hello);
+                    }
                 }
             }
         }
