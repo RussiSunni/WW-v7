@@ -173,13 +173,15 @@ public class GameControl : MonoBehaviour
                     if (lookup.Subject)
                     {
                         subjectScript.Animation(lookup.AnimationClipParameter);
+                        soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+
                     }
                     else
                     {
                         // print(currentWords[i]);
                         // print(lookup.AnimationClipParameter);
                         fairyScript.Animation(lookup.AnimationClipParameter);
-                        soundManagerScript.playSound(soundManagerScript.hello);
+                        soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
                     }
                 }
             }

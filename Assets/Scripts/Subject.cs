@@ -14,6 +14,8 @@ public class Subject : MonoBehaviour
     public void NoAnimation()
     {
         animator.SetBool("isCat", false);
+        animator.SetBool("isDog", false);
+
     }
 
     public void Animation(string word)

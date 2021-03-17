@@ -650,7 +650,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSrc: {fileID: 161558916}
-  hello: {fileID: 8300000, guid: 0a18f776035f2262a8b74b23439a0066, type: 3}
+  wordSoundList: []
+  HELLO: {fileID: 8300000, guid: 0a18f776035f2262a8b74b23439a0066, type: 3}
+  UMBRELLA: {fileID: 8300000, guid: edb0d11bda9cac1deba715ca26b285d2, type: 3}
+  SALT: {fileID: 8300000, guid: 6b1cda7059b7fd5279412911b87fa70a, type: 3}
+  JUMP: {fileID: 8300000, guid: a8a13cb492f71bca7a8063cea822a2e5, type: 3}
+  SIT: {fileID: 8300000, guid: 34233b9c33bfe6715a76dd69a9c1c61e, type: 3}
+  CAT: {fileID: 8300000, guid: 3ff4ca39229ecd00dbd4ca222f901eab, type: 3}
+  QUEEN: {fileID: 8300000, guid: f847e6d0c3a010a2baa4826761809197, type: 3}
+  BUS: {fileID: 8300000, guid: 2095f2e83ffcc9572b667691f4defb76, type: 3}
+  BLOND: {fileID: 8300000, guid: e21a9433bf717f342802195eff6d110f, type: 3}
 --- !u!1 &179377286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,9 +2855,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bd746a7e469f68e2680fa182ffcbebbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
