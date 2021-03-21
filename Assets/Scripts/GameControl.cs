@@ -102,7 +102,7 @@ public class GameControl : MonoBehaviour
     }
 
 
-    // void Update()
+
     public void UpdateStage()
     {
         var fairy = GameObject.Find("Fairy");
@@ -187,10 +187,11 @@ public class GameControl : MonoBehaviour
             }
         }
 
-
         // // //RULES ----------------         
         currentWords.Clear();
     }
+
+
 
 
 

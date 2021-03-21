@@ -235,9 +235,9 @@ public class LetterUI : MonoBehaviour
     // for 3 rows
     private void setParent1(GameObject block)
     {
-        for (int i = 2; i < Rows.Count; i--)
+        for (int i = 0; i < 3; i++)
         {
-            for (int h = 0; h < Rows[i].Count; h++)
+            for (int h = 0; h < 8; h++)
             {
                 if (Rows[i][h].childCount == 0)
                 {
@@ -249,7 +249,13 @@ public class LetterUI : MonoBehaviour
                     continue;
                 }
             }
+            break;
         }
+
+        // update
+        GameObject gameControl = GameObject.Find("GameControl");
+        GameControl gameControlScript = gameControl.GetComponent<GameControl>();
+        gameControlScript.UpdateStage();
     }
 
 
@@ -269,5 +275,24 @@ public class LetterUI : MonoBehaviour
                 Destroy(Row2[i].transform.GetChild(0).gameObject);
             }
         }
+        for (int i = 0; i < Row3.Count; i++)
+        {
+            if (Row3[i].childCount > 0)
+            {
+                Destroy(Row3[i].transform.GetChild(0).gameObject);
+            }
+        }
+
+        var fairy = GameObject.Find("Fairy");
+        Fairy fairyScript = fairy.GetComponent<Fairy>();
+
+        var subject = GameObject.Find("Subject");
+        Subject subjectScript = subject.GetComponent<Subject>();
+
+        // reset Fairy animation
+        fairyScript.NoAnimation();
+
+        // reset subject animation
+        subjectScript.NoAnimation();
     }
 }

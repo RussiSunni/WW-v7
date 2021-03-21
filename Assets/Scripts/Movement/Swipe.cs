@@ -100,10 +100,11 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler // re
     }
     IEnumerator RegisterWord()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
 
         GameObject gameControl = GameObject.Find("GameControl");
         GameControl gameControlScript = gameControl.GetComponent<GameControl>();
         gameControlScript.UpdateStage();
+
     }
 }

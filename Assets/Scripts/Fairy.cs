@@ -25,6 +25,8 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isQueen", false);
         animator.SetBool("isNight", false);
         animator.SetBool("isSalt", false);
+        animator.SetBool("isUpset", false);
+
     }
 
     public void Animation(string word)
