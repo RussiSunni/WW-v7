@@ -69,6 +69,12 @@
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.IK.Editor">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.IK.Runtime">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -122,6 +128,33 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Editor">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+ <HintPath>/home/jonathan/Work/Ecomap/App/Unity/Projects/WildWorld2/WW/v7/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

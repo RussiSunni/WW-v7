@@ -28,6 +28,8 @@ public class LetterUI : MonoBehaviour
     string word;
     char[] board;
 
+
+
     void Start()
     {
         Col1.Add(A4);

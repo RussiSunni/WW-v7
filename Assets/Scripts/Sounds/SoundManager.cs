@@ -4,6 +4,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSrc;
+
+    public AudioClip catExercise01, catExercise02;
     public List<AudioClip> wordSoundList = new List<AudioClip>();
     // public AudioClip HELLO, UMBRELLA, SALT, JUMP, SIT, CAT, QUEEN, BUS, BLOND;
     void Start()
@@ -15,4 +17,5 @@ public class SoundManager : MonoBehaviour
     {
         audioSrc.PlayOneShot(audioclip);
     }
+
 }
