@@ -9,7 +9,9 @@ public class Fairy : MonoBehaviour
     private float inputTimer;
     private int counter;
     public Text fairyText;
-    private bool inCatExercise, catExercise01, catExercise02;
+
+    public static bool inCatExercise;
+    private bool catExercise01, catExercise02;
 
     private void Start()
     {
@@ -42,6 +44,8 @@ public class Fairy : MonoBehaviour
         GameControl.currentWords.Clear();
     }
 
+
+    // AI
     void Update()
     {
         inputTimer += Time.deltaTime;
@@ -58,16 +62,18 @@ public class Fairy : MonoBehaviour
             {
                 var soundManager = GameObject.Find("SoundManager");
                 SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
+                // "Hey"
                 soundManagerScript.playSound(soundManagerScript.wordSoundList[12]);
+
+                // "What is your name?" maybe she is not looking
+                //  soundManagerScript.playSound(soundManagerScript.nameExercise);
 
                 inputTimer = 0;
                 counter++;
-
-                print(counter);
             }
             else if (counter == 1)
             {
-                catExercise1();
+                CatExercise1();
                 inputTimer = 0;
                 counter++;
             }
@@ -77,13 +83,24 @@ public class Fairy : MonoBehaviour
             }
             else if (counter == 3)
             {
-                catExercise2();
+                CatExercise2();
             }
         }
     }
 
 
-    void catExercise1()
+    // Name Exercise
+    // void NameExercise()
+    // {
+    //     var soundManager = GameObject.Find("SoundManager");
+    //     SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
+
+    //     fairyText.text = "What is your name?";
+    // }
+
+
+    // Cat Exercise
+    void CatExercise1()
     {
         inCatExercise = true;
 
@@ -96,19 +113,26 @@ public class Fairy : MonoBehaviour
             soundManagerScript.playSound(soundManagerScript.catExercise01);
             catExercise01 = true;
         }
-
     }
 
-    void catExercise2()
+    void CatExercise2()
+    {
+        if (!catExercise02)
+        {
+            StartCoroutine((CatExercise02()));
+            catExercise02 = true;
+        }
+    }
+
+    IEnumerator CatExercise02()
     {
         var soundManager = GameObject.Find("SoundManager");
         SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
 
-        if (!catExercise02)
-        {
-            //fairyText.text = "'C' 'A' 'T'";
-            soundManagerScript.playSound(soundManagerScript.catExercise02);
-            catExercise02 = true;
-        }
+        soundManagerScript.playSound(soundManagerScript.catExercise02);
+        yield return new WaitForSeconds(1.5f);
+        soundManagerScript.playSound(soundManagerScript.catExercise03);
+        yield return new WaitForSeconds(1.5f);
+        soundManagerScript.playSound(soundManagerScript.catExercise04);
     }
 }

@@ -67,9 +67,24 @@ public class DataService
 
     }
 
-
     public IEnumerable<DictionaryLookup> GetDL()
     {
         return _connection.Table<DictionaryLookup>();
+    }
+
+    public IEnumerable<UserWords> GetUserWords()
+    {
+        return _connection.Table<UserWords>();
+    }
+
+
+    public UserWords CreateUserWord(string name)
+    {
+        var uw = new UserWords
+        {
+            Name = name
+        };
+        _connection.Insert(uw);
+        return uw;
     }
 }

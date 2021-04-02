@@ -97,11 +97,7 @@ public class GameControl : MonoBehaviour
         Rows.Add(Row1);
         Rows.Add(Row2);
         Rows.Add(Row3);
-
-
     }
-
-
 
     public void UpdateStage()
     {
@@ -175,6 +171,15 @@ public class GameControl : MonoBehaviour
                         subjectScript.Animation(lookup.AnimationClipParameter);
                         soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
 
+                        // Cat exercise
+                        if (Fairy.inCatExercise)
+                        {
+                            if (lookup.Name == "CAT")
+                            {
+                                soundManagerScript.playSound(soundManagerScript.catExercise05);
+                                // User.knowCATWord = true;
+                            }
+                        }
                     }
                     else
                     {
@@ -190,9 +195,6 @@ public class GameControl : MonoBehaviour
         // // //RULES ----------------         
         currentWords.Clear();
     }
-
-
-
 
 
     private bool Search(char[] board, List<DictionaryLookup> dictionaryLookupsList)

@@ -4,15 +4,19 @@ using UnityEngine.UI;
 
 public class ExistingDBScript : MonoBehaviour
 {
-
     public Text DebugText;
 
     // Use this for initialization
     void Start()
     {
+        // Dictionary Lookups
         var ds = new DataService("DictionaryLookups.db");
         var dictionaryLookups = ds.GetDL();
         ToConsole(dictionaryLookups);
+
+        // Users
+        var user = ds.GetUserWords();
+        ToConsole2(user);
     }
 
     private void ToConsole(IEnumerable<DictionaryLookup> dictionaryLookups)
@@ -24,13 +28,23 @@ public class ExistingDBScript : MonoBehaviour
             GameControl.dictionaryLookupsList.Add(dictionaryLookup);
 
             ToConsole(dictionaryLookup.ToString());
-
         }
     }
 
     private void ToConsole(string msg)
     {
         // DebugText.text += System.Environment.NewLine + msg;
-        Debug.Log(msg);
+        // Debug.Log(msg);
     }
+
+    private void ToConsole2(IEnumerable<UserWords> users)
+    {
+        foreach (var user in users)
+        {
+            print(user.Name);
+        }
+    }
+
+
+
 }
