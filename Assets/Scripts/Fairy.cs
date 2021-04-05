@@ -7,7 +7,6 @@ public class Fairy : MonoBehaviour
 {
     public Animator animator;
     private float inputTimer;
-    private int counter;
     public Text fairyText;
 
     public static bool inCatExercise;
@@ -20,8 +19,6 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isSit", false);
 
         inputTimer = 0;
-
-
     }
 
     public void NoAnimation()
@@ -35,7 +32,6 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isNight", false);
         animator.SetBool("isSalt", false);
         animator.SetBool("isUpset", false);
-
     }
 
     public void Animation(string word)
@@ -53,50 +49,20 @@ public class Fairy : MonoBehaviour
         if (Input.anyKey)
         {
             inputTimer = 0;
-            counter = 0;
         }
 
-        if (inputTimer >= 10f)
+        if (inputTimer >= 20f)
         {
-            if (counter == 0)
-            {
-                var soundManager = GameObject.Find("SoundManager");
-                SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
-                // "Hey"
-                soundManagerScript.playSound(soundManagerScript.wordSoundList[12]);
-
-                // "What is your name?" maybe she is not looking
-                //  soundManagerScript.playSound(soundManagerScript.nameExercise);
-
-                inputTimer = 0;
-                counter++;
-            }
-            else if (counter == 1)
-            {
-                CatExercise1();
-                inputTimer = 0;
-                counter++;
-            }
-            else if (counter == 2)
-            {
-                counter++;
-            }
-            else if (counter == 3)
-            {
-                CatExercise2();
-            }
+            NextExercise();
+            inputTimer = 0;
         }
     }
 
+    void NextExercise()
+    {
 
-    // Name Exercise
-    // void NameExercise()
-    // {
-    //     var soundManager = GameObject.Find("SoundManager");
-    //     SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
 
-    //     fairyText.text = "What is your name?";
-    // }
+    }
 
 
     // Cat Exercise

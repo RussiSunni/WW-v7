@@ -6,7 +6,6 @@ public class ExistingDBScript : MonoBehaviour
 {
     public Text DebugText;
 
-    // Use this for initialization
     void Start()
     {
         // Dictionary Lookups
@@ -17,6 +16,12 @@ public class ExistingDBScript : MonoBehaviour
         // Users
         var user = ds.GetUserWords();
         ToConsole2(user);
+
+
+#if UNITY_EDITOR
+        ds.TruncateUserWords();
+#endif
+
     }
 
     private void ToConsole(IEnumerable<DictionaryLookup> dictionaryLookups)
@@ -37,14 +42,15 @@ public class ExistingDBScript : MonoBehaviour
         // Debug.Log(msg);
     }
 
-    private void ToConsole2(IEnumerable<UserWords> users)
+    private void ToConsole2(IEnumerable<UserWords> userWords)
     {
-        foreach (var user in users)
+        foreach (var userWord in userWords)
         {
-            print(user.Name);
+            GameControl.userWordsList.Add(userWord);
+            // foreach (var uw in GameControl.userWordsList)
+            // {
+            //     print(uw.Name);
+            // }
         }
     }
-
-
-
 }

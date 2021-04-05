@@ -87,4 +87,12 @@ public class DataService
         _connection.Insert(uw);
         return uw;
     }
+
+
+    public void TruncateUserWords()
+    {
+        _connection.Execute("DELETE FROM UserWords");
+    }
+
+
 }
