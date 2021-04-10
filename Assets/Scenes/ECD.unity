@@ -656,6 +656,7 @@ MonoBehaviour:
   catExercise04: {fileID: 8300000, guid: cceb602e3f21185b7985da7f2f3c041a, type: 3}
   catExercise05: {fileID: 8300000, guid: 5c07997fa8c8198a3aec5b99c9965137, type: 3}
   nameExercise: {fileID: 8300000, guid: 114e423c1ffb91ce6838eb30fb29dee8, type: 3}
+  saltExercise01: {fileID: 8300000, guid: e037de8981cc0814498c861d9aff769c, type: 3}
   wordSoundList:
   - {fileID: 8300000, guid: a8a13cb492f71bca7a8063cea822a2e5, type: 3}
   - {fileID: 8300000, guid: 0a18f776035f2262a8b74b23439a0066, type: 3}

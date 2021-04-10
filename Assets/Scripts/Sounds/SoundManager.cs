@@ -4,7 +4,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSrc;
-    public AudioClip catExercise01, catExercise02, catExercise03, catExercise04, catExercise05, nameExercise;
+    public AudioClip catExercise01, catExercise02, catExercise03, catExercise04, catExercise05, nameExercise, saltExercise01;
     public List<AudioClip> wordSoundList = new List<AudioClip>();
     // public AudioClip HELLO, UMBRELLA, SALT, JUMP, SIT, CAT, QUEEN, BUS, BLOND;
     void Start()

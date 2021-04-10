@@ -8,9 +8,7 @@ public class Fairy : MonoBehaviour
     public Animator animator;
     private float inputTimer;
     public Text fairyText;
-
     public static bool inCatExercise;
-    private bool catExercise01, catExercise02;
 
     private void Start()
     {
@@ -51,17 +49,24 @@ public class Fairy : MonoBehaviour
             inputTimer = 0;
         }
 
-        if (inputTimer >= 20f)
+        if (inputTimer >= 5f)
         {
-            NextExercise();
             inputTimer = 0;
+            NextExercise();
         }
+
+        print(inputTimer);
     }
 
     void NextExercise()
     {
-
-
+        for (int i = 0; i < GameControl.userWordsList.Count + 1; i++)
+        {
+            if (!GameControl.userWordNameList.Contains("CAT"))
+                CatExercise1();
+            else if (!GameControl.userWordNameList.Contains("SALT"))
+                SaltExercise1();
+        }
     }
 
 
@@ -72,22 +77,12 @@ public class Fairy : MonoBehaviour
 
         var soundManager = GameObject.Find("SoundManager");
         SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
-
-        if (!catExercise01)
-        {
-            //fairyText.text = "I've lost my cat, have you seen him?";
-            soundManagerScript.playSound(soundManagerScript.catExercise01);
-            catExercise01 = true;
-        }
+        soundManagerScript.playSound(soundManagerScript.catExercise01);
     }
 
     void CatExercise2()
     {
-        if (!catExercise02)
-        {
-            StartCoroutine((CatExercise02()));
-            catExercise02 = true;
-        }
+        StartCoroutine((CatExercise02()));
     }
 
     IEnumerator CatExercise02()
@@ -100,5 +95,12 @@ public class Fairy : MonoBehaviour
         soundManagerScript.playSound(soundManagerScript.catExercise03);
         yield return new WaitForSeconds(1.5f);
         soundManagerScript.playSound(soundManagerScript.catExercise04);
+    }
+
+    void SaltExercise1()
+    {
+        var soundManager = GameObject.Find("SoundManager");
+        SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
+        soundManagerScript.playSound(soundManagerScript.saltExercise01);
     }
 }

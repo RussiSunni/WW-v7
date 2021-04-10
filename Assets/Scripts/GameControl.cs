@@ -24,6 +24,7 @@ public class GameControl : MonoBehaviour
     public static List<string> currentWords = new List<string>();
     public static List<DictionaryLookup> dictionaryLookupsList = new List<DictionaryLookup>();
     public static List<UserWords> userWordsList = new List<UserWords>();
+    public static List<string> userWordNameList = new List<string>();
 
     string word;
     char[] board;
@@ -101,9 +102,6 @@ public class GameControl : MonoBehaviour
 
     public void UpdateStage()
     {
-        //for (int i = 0; i > 10; i++)
-        print(userWordsList.Count);
-
         var fairy = GameObject.Find("Fairy");
         Fairy fairyScript = fairy.GetComponent<Fairy>();
 
@@ -120,7 +118,6 @@ public class GameControl : MonoBehaviour
         subjectScript.NoAnimation();
 
         // currentWords = words that have been made    
-
 
         // load current board
         // for 3 rows
@@ -194,12 +191,12 @@ public class GameControl : MonoBehaviour
 
                     // update user table in db
                     var ds = new DataService("DictionaryLookups.db");
-                    //                    ds.CreateUserWord(lookup.Name);
                     userWordsList.Add(ds.CreateUserWord(lookup.Name));
 
-                    foreach (var u in userWordsList)
+                    foreach (var uw in userWordsList)
                     {
-                        print(u.Name);
+                        print(uw.Name);
+                        userWordNameList.Add(uw.Name);
                     }
                 }
             }
