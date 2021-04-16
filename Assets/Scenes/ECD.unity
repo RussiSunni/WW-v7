@@ -650,12 +650,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSrc: {fileID: 161558916}
+  helloExercise01: {fileID: 8300000, guid: 55880491ad4d96d2393a0b8309843bb2, type: 3}
+  nameExercise01: {fileID: 8300000, guid: 114e423c1ffb91ce6838eb30fb29dee8, type: 3}
+  nameExercise02: {fileID: 8300000, guid: 0fad41d6fecfda10082a489c0804c281, type: 3}
   catExercise01: {fileID: 8300000, guid: 78427ef28af6419e69060f1cd8bb97bb, type: 3}
   catExercise02: {fileID: 8300000, guid: 9737cadab402f87ecba1b35a54878e3d, type: 3}
   catExercise03: {fileID: 8300000, guid: 102fe913f189013d6a2097a8eae4ec42, type: 3}
   catExercise04: {fileID: 8300000, guid: cceb602e3f21185b7985da7f2f3c041a, type: 3}
   catExercise05: {fileID: 8300000, guid: 5c07997fa8c8198a3aec5b99c9965137, type: 3}
-  nameExercise: {fileID: 8300000, guid: 114e423c1ffb91ce6838eb30fb29dee8, type: 3}
   saltExercise01: {fileID: 8300000, guid: e037de8981cc0814498c861d9aff769c, type: 3}
   wordSoundList:
   - {fileID: 8300000, guid: a8a13cb492f71bca7a8063cea822a2e5, type: 3}

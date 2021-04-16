@@ -25,6 +25,8 @@ public class GameControl : MonoBehaviour
     public static List<DictionaryLookup> dictionaryLookupsList = new List<DictionaryLookup>();
     public static List<UserWords> userWordsList = new List<UserWords>();
     public static List<string> userWordNameList = new List<string>();
+    public static UserDetails userDetails = new UserDetails();
+    public static bool isNameExercise;
 
     string word;
     char[] board;
@@ -151,59 +153,74 @@ public class GameControl : MonoBehaviour
             }
         }
 
-
-        // for 3 rows
-        // run the function      
-        Search(board1, dictionaryLookupsList);
-        Search(board2, dictionaryLookupsList);
-        Search(board3, dictionaryLookupsList);
-
-        // for this string in Current Words, use this
-        for (int i = 0; i < currentWords.Count; i++)
+        // for the exercise to find the name
+        if (isNameExercise)
         {
-            foreach (var lookup in dictionaryLookupsList)
+            string nameString = new string(board1);
+            string nameString02 = new string(board2);
+            string nameString03 = new string(board3);
+            //string nameString = nameString + nameString02 + nameString03;
+
+            userDetails.Name = nameString;
+        }
+        // for other exercises or regular dictionary
+        else
+        {
+            // for 3 rows
+            // run the function      
+            Search(board1, dictionaryLookupsList);
+            Search(board2, dictionaryLookupsList);
+            Search(board3, dictionaryLookupsList);
+
+            // for this string in Current Words, use this
+            for (int i = 0; i < currentWords.Count; i++)
             {
-
-                if (currentWords[i] == lookup.Name)
+                foreach (var lookup in dictionaryLookupsList)
                 {
-                    if (lookup.Subject)
+                    if (currentWords[i] == lookup.Name)
                     {
-                        subjectScript.Animation(lookup.AnimationClipParameter);
-                        soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
-
-                        // Cat exercise
-                        if (Fairy.inCatExercise)
+                        // if word is a noun, and another object is on the screen
+                        if (lookup.Subject)
                         {
-                            if (lookup.Name == "CAT")
+                            subjectScript.Animation(lookup.AnimationClipParameter);
+                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+
+                            // Cat exercise 02 - Fairy saying thanks
+                            if (Fairy.inCatExercise)
                             {
-                                soundManagerScript.playSound(soundManagerScript.catExercise05);
-                                // User.knowCATWord = true;
+                                if (lookup.Name == "CAT")
+                                {
+                                    soundManagerScript.playSound(soundManagerScript.catExercise05);
+                                    // User.knowCATWord = true;
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        // print(currentWords[i]);
-                        // print(lookup.AnimationClipParameter);
-                        fairyScript.Animation(lookup.AnimationClipParameter);
-                        soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
-                    }
 
-                    // update user table in db
-                    var ds = new DataService("DictionaryLookups.db");
-                    userWordsList.Add(ds.CreateUserWord(lookup.Name));
+                        // if word is a verb, or another word that does not require another object on the screen
+                        else
+                        {
+                            // print(currentWords[i]);
+                            // print(lookup.AnimationClipParameter);
+                            fairyScript.Animation(lookup.AnimationClipParameter);
+                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+                        }
 
-                    foreach (var uw in userWordsList)
-                    {
-                        print(uw.Name);
-                        userWordNameList.Add(uw.Name);
+                        // update user table in db
+                        var ds = new DataService("DictionaryLookups.db");
+                        userWordsList.Add(ds.CreateUserWord(lookup.Name));
+
+                        foreach (var uw in userWordsList)
+                        {
+                            print(uw.Name);
+                            userWordNameList.Add(uw.Name);
+                        }
                     }
                 }
             }
-        }
 
-        // // //RULES ----------------         
-        currentWords.Clear();
+            // // //RULES ----------------         
+            currentWords.Clear();
+        }
     }
 
 
@@ -247,9 +264,6 @@ public class GameControl : MonoBehaviour
             currentWords.Add(word);
         }
 
-
         return found;
     }
-
-
 }

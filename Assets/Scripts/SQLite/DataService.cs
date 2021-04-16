@@ -88,6 +88,16 @@ public class DataService
         return uw;
     }
 
+    public UserDetails CreateUser(string name)
+    {
+        var ud = new UserDetails
+        {
+            Name = name
+        };
+        _connection.Insert(ud);
+        return ud;
+    }
+
 
     public void TruncateUserWords()
     {
