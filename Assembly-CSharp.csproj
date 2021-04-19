@@ -50,7 +50,9 @@
      <Compile Include="Assets\Scripts\Fairy\FairyBaseState.cs" />
      <Compile Include="Assets\Scripts\Fairy\FairyController_FSM.cs" />
      <Compile Include="Assets\Scripts\Fairy\FairySilentState.cs" />
-     <Compile Include="Assets\Scripts\Fairy\FairyTeachingState.cs" />
+     <Compile Include="Assets\Scripts\Fairy\FairyTeaching\FairyGetUserDetailsState.cs" />
+     <Compile Include="Assets\Scripts\Fairy\FairyTeaching\FairyTeachingLevel1State.cs" />
+     <Compile Include="Assets\Scripts\Fairy\FairyTeaching\FairyTeachingState.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\LetterUI.cs" />
      <Compile Include="Assets\Scripts\Movement\DraggableBlock.cs" />

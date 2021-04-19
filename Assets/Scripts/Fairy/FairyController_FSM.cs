@@ -6,7 +6,9 @@ public class FairyController_FSM : MonoBehaviour
 {
     private FairyBaseState currentState;
     public readonly FairySilentState SilentState = new FairySilentState();
-    public readonly FairyTeachingState TeachingState = new FairyTeachingState();
+    // public readonly FairyTeachingState TeachingState = new FairyTeachingState();
+    public readonly FairyGetUserDetailsState GetUserDetailsState = new FairyGetUserDetailsState();
+    public readonly FairyTeachingLevel1State TeachingLevel1State = new FairyTeachingLevel1State();
 
     private void Start()
     {

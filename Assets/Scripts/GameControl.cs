@@ -26,7 +26,7 @@ public class GameControl : MonoBehaviour
     public static List<UserWords> userWordsList = new List<UserWords>();
     public static List<string> userWordNameList = new List<string>();
     public static UserDetails userDetails = new UserDetails();
-    public static bool isNameExercise;
+    public static bool isNameExercise, isAgeExercise;
 
     string word;
     char[] board;
@@ -156,13 +156,25 @@ public class GameControl : MonoBehaviour
         // for the exercise to find the name
         if (isNameExercise)
         {
-            string nameString = new string(board1);
+            string nameString01 = new string(board1);
             string nameString02 = new string(board2);
             string nameString03 = new string(board3);
             //string nameString = nameString + nameString02 + nameString03;
 
-            userDetails.Name = nameString;
+            userDetails.Name = nameString01;
         }
+
+        // for the exercise to find the age
+        if (isAgeExercise)
+        {
+            string ageString01 = new string(board1);
+            string ageString02 = new string(board2);
+            string ageString03 = new string(board3);
+            //string nameString = nameString + nameString02 + nameString03;
+
+            userDetails.Age = ageString01;
+        }
+
         // for other exercises or regular dictionary
         else
         {
@@ -205,9 +217,12 @@ public class GameControl : MonoBehaviour
                             soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
                         }
 
+                        print(lookup.Name);
                         // update user table in db
                         var ds = new DataService("DictionaryLookups.db");
-                        userWordsList.Add(ds.CreateUserWord(lookup.Name));
+
+                        if (!GameControl.userWordNameList.Contains(lookup.Name))
+                            userWordsList.Add(ds.CreateUserWord(lookup.Name));
 
                         foreach (var uw in userWordsList)
                         {

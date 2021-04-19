@@ -7,7 +7,7 @@ public class FairySilentState : FairyBaseState
     private float inputTimer;
     public override void EnterState(FairyController_FSM fairy)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("silent state");
     }
 
     public override void Update(FairyController_FSM fairy)
@@ -20,10 +20,10 @@ public class FairySilentState : FairyBaseState
             inputTimer = 0;
         }
 
-        if (inputTimer >= 10f)
+        if (inputTimer >= 5f)
         {
             inputTimer = 0;
-            fairy.TransitionToState(fairy.TeachingState);
+            fairy.TransitionToState(fairy.GetUserDetailsState);
         }
     }
 }

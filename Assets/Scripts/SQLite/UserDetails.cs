@@ -6,7 +6,7 @@ public class UserDetails
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public string Name { get; set; }
-    public int Age { get; set; }
+    public string Age { get; set; }
     public string Country { get; set; }
     public string City { get; set; }
     public DateTime DateStarted { get; set; }

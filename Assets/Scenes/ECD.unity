@@ -653,6 +653,7 @@ MonoBehaviour:
   helloExercise01: {fileID: 8300000, guid: 55880491ad4d96d2393a0b8309843bb2, type: 3}
   nameExercise01: {fileID: 8300000, guid: 114e423c1ffb91ce6838eb30fb29dee8, type: 3}
   nameExercise02: {fileID: 8300000, guid: 0fad41d6fecfda10082a489c0804c281, type: 3}
+  ageExercise01: {fileID: 8300000, guid: 8f888ca7e82f3e94f9aeb83a24f7ed97, type: 3}
   catExercise01: {fileID: 8300000, guid: 78427ef28af6419e69060f1cd8bb97bb, type: 3}
   catExercise02: {fileID: 8300000, guid: 9737cadab402f87ecba1b35a54878e3d, type: 3}
   catExercise03: {fileID: 8300000, guid: 102fe913f189013d6a2097a8eae4ec42, type: 3}
@@ -3711,6 +3712,7 @@ GameObject:
   - component: {fileID: 746044328}
   - component: {fileID: 746044329}
   - component: {fileID: 746044330}
+  - component: {fileID: 746044331}
   m_Layer: 0
   m_Name: Fairy
   m_TagString: Untagged
@@ -3741,7 +3743,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 746044326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088a2a53a2e5ff5f78eeee081c22d89c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c05640d0b5ea81718c616471d31ae85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 746044330}
@@ -3815,6 +3817,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &746044331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746044326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4898cab2cd494c9eaf3333e28ccf4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &753017505
 GameObject:
   m_ObjectHideFlags: 0
