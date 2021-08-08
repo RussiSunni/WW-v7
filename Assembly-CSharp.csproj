@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Sounds\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Fairy\FairyController_FSM.cs" />
      <Compile Include="Assets\Scripts\SQLite\DictionaryLookup.cs" />
+     <Compile Include="Assets\Scripts\Subjects\Duck.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.15f2/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

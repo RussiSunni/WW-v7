@@ -291,10 +291,16 @@ public class LetterUI : MonoBehaviour
         var subject = GameObject.Find("Subject");
         Subject subjectScript = subject.GetComponent<Subject>();
 
+        var duck = GameObject.Find("Duck");
+        Duck duckScript = duck.GetComponent<Duck>();
+
         // reset Fairy animation
         fairyScript.NoAnimation();
 
         // reset subject animation
         subjectScript.NoAnimation();
+
+        // reset duck animation
+        duckScript.NoAnimation();
     }
 }

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
 public class GameControl : MonoBehaviour
 {
-
     public Transform A4, A5, A6, B4, B5, B6, C4, C5, C6, D4, D5, D6, E4, E5, E6, F4, F5, F6, G4, G5, G6, H4, H5, H6;
     public Transform A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     public List<Transform> Col1 = new List<Transform>();
@@ -28,14 +26,11 @@ public class GameControl : MonoBehaviour
     public static List<string> userWordNameList = new List<string>();
     public static UserDetails userDetails = new UserDetails();
     public static bool isNameExercise, isAgeExercise;
-
     string word;
     char[] board;
 
     public Animator fairyAnimator;
-
     public GameObject duck;
-
 
     void Start()
     {
@@ -104,8 +99,6 @@ public class GameControl : MonoBehaviour
         Rows.Add(Row2);
         Rows.Add(Row3);
 
-
-        duck.SetActive(false);
     }
 
     public void UpdateStage()
@@ -124,6 +117,10 @@ public class GameControl : MonoBehaviour
 
         // reset subject animation
         subjectScript.NoAnimation();
+
+        // reset subject animation
+        var duckScript = duck.GetComponent<Duck>();
+        duckScript.NoAnimation();
 
         // currentWords = words that have been made    
 
@@ -203,7 +200,7 @@ public class GameControl : MonoBehaviour
                         {
                             if (lookup.Name == "DUCK")
                             {
-
+                                duckScript.Play();
                             }
                             else
                             {
