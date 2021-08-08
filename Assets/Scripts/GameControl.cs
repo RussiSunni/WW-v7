@@ -105,7 +105,7 @@ public class GameControl : MonoBehaviour
         Rows.Add(Row3);
 
 
-        
+        duck.SetActive(false);
     }
 
     public void UpdateStage()
