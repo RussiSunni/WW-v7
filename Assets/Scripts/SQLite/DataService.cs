@@ -105,4 +105,21 @@ public class DataService
     }
 
 
+    public void UpdateUserAge(string name, string age)
+    {
+        var ud = _connection.Table<UserDetails>().Where(x => x.Name == name).FirstOrDefault();
+        Debug.Log(ud.Name);
+        ud.Age = age;
+        Debug.Log(ud.Age);
+
+
+        _connection.Update(ud);
+
+
+
+        // foreach (var record in table)
+        // {
+        //     Debug.Log(record.Name);
+        // }
+    }
 }

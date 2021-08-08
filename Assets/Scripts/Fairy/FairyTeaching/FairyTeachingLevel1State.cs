@@ -7,17 +7,18 @@ public class FairyTeachingLevel1State : FairyBaseState
 
     public override void EnterState(FairyController_FSM fairy)
     {
-        Debug.Log("teaching level 1 state");
         NextExercise(fairy);
     }
 
     public override void Update(FairyController_FSM fairy)
     {
-        //throw new System.NotImplementedException();
+
     }
 
     void NextExercise(FairyController_FSM fairy)
     {
+        Debug.Log("test");
+
         if (!GameControl.userWordNameList.Contains("CAT"))
         {
             CatExercise1();
@@ -30,7 +31,13 @@ public class FairyTeachingLevel1State : FairyBaseState
     }
 
 
-    // Cat Exercise
+    void ShouldFairyBeQuietCheckExercise()
+    {
+        var soundManager = GameObject.Find("SoundManager");
+        SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
+        soundManagerScript.playSound(soundManagerScript.shouldFairyBeQuietCheckExercise);
+    }
+
     void CatExercise1()
     {
         //  inCatExercise = true;

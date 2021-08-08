@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
@@ -32,6 +33,8 @@ public class GameControl : MonoBehaviour
     char[] board;
 
     public Animator fairyAnimator;
+
+    public GameObject duck;
 
 
     void Start()
@@ -100,6 +103,9 @@ public class GameControl : MonoBehaviour
         Rows.Add(Row1);
         Rows.Add(Row2);
         Rows.Add(Row3);
+
+
+        
     }
 
     public void UpdateStage()
@@ -164,6 +170,7 @@ public class GameControl : MonoBehaviour
             userDetails.Name = nameString01;
         }
 
+
         // for the exercise to find the age
         if (isAgeExercise)
         {
@@ -194,16 +201,23 @@ public class GameControl : MonoBehaviour
                         // if word is a noun, and another object is on the screen
                         if (lookup.Subject)
                         {
-                            subjectScript.Animation(lookup.AnimationClipParameter);
-                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
-
-                            // Cat exercise 02 - Fairy saying thanks
-                            if (Fairy.inCatExercise)
+                            if (lookup.Name == "DUCK")
                             {
-                                if (lookup.Name == "CAT")
+
+                            }
+                            else
+                            {
+                                subjectScript.Animation(lookup.AnimationClipParameter);
+                                soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+
+                                // Cat exercise 02 - Fairy saying thanks
+                                if (Fairy.inCatExercise)
                                 {
-                                    soundManagerScript.playSound(soundManagerScript.catExercise05);
-                                    // User.knowCATWord = true;
+                                    if (lookup.Name == "CAT")
+                                    {
+                                        soundManagerScript.playSound(soundManagerScript.catExercise05);
+                                        // User.knowCATWord = true;
+                                    }
                                 }
                             }
                         }
@@ -238,6 +252,30 @@ public class GameControl : MonoBehaviour
         }
     }
 
+
+    void StartPost()
+    {
+        StartCoroutine(Upload());
+    }
+
+    IEnumerator Upload()
+    {
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("field1=foo&field2=bar"));
+        formData.Add(new MultipartFormFileSection("my file data", "myfile.txt"));
+
+        UnityWebRequest www = UnityWebRequest.Post("http://www.my-server.com/myform", formData);
+        yield return www.SendWebRequest();
+
+        // if (www.result != UnityWebRequest.Result.Success)
+        // {
+        //     Debug.Log(www.error);
+        // }
+        // else
+        // {
+        //     Debug.Log("Form upload complete!");
+        // }
+    }
 
     private bool Search(char[] board, List<DictionaryLookup> dictionaryLookupsList)
     {

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.Networking;
+
 public class FairyGetUserDetailsState : FairyBaseState
 {
     private bool isUserDetailsComplete = false;
 
     public override void EnterState(FairyController_FSM fairy)
     {
-        Debug.Log("get user details state");
+        //   Debug.Log("get user details state");
         NextExercise(fairy);
     }
 
@@ -41,6 +43,12 @@ public class FairyGetUserDetailsState : FairyBaseState
             GameControl.isAgeExercise = false;
             AgeExercise2();
         }
+        else if (GameControl.userDetails.Age != null && !GameControl.isAgeExercise)
+        {
+            Fairy.haveUserDetails = true;
+        }
+
+        var ds = new DataService("DictionaryLookups.db");
 
         fairy.TransitionToState(fairy.SilentState);
     }
@@ -52,13 +60,6 @@ public class FairyGetUserDetailsState : FairyBaseState
         SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
         soundManagerScript.playSound(soundManagerScript.helloExercise01);
     }
-
-
-    // void NextExercise2()
-    // {
-
-    // }
-
 
     // Name Exercise
     void NameExercise1()
@@ -74,7 +75,7 @@ public class FairyGetUserDetailsState : FairyBaseState
         SoundManager soundManagerScript = soundManager.GetComponent<SoundManager>();
         soundManagerScript.playSound(soundManagerScript.nameExercise02);
 
-        Debug.Log(GameControl.userDetails.Name);
+        //  Debug.Log(GameControl.userDetails.Name);
 
         var ds = new DataService("DictionaryLookups.db");
         ds.CreateUser(GameControl.userDetails.Name);
@@ -96,6 +97,9 @@ public class FairyGetUserDetailsState : FairyBaseState
         Debug.Log(GameControl.userDetails.Age);
 
         var ds = new DataService("DictionaryLookups.db");
-        ds.CreateUser(GameControl.userDetails.Name);
+        ds.UpdateUserAge(GameControl.userDetails.Name, GameControl.userDetails.Age);
     }
+
+
+
 }

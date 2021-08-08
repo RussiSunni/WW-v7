@@ -8,7 +8,7 @@ public class FairyTeachingState : FairyBaseState
 
     public override void EnterState(FairyController_FSM fairy)
     {
-        Debug.Log("teaching state");
+        //  Debug.Log("teaching state");
         NextExercise(fairy);
     }
 

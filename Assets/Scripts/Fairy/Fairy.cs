@@ -20,7 +20,7 @@ public class Fairy : MonoBehaviour
 
     public Animator animator;
     public Text fairyText;
-    public static bool inCatExercise;
+    public static bool haveUserDetails, inCatExercise;
 
     public void NoAnimation()
     {
@@ -34,6 +34,9 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isSalt", false);
         animator.SetBool("isUpset", false);
         animator.SetBool("isHi", false);
+        animator.SetBool("isUmbrella", false);
+        animator.SetBool("isBlond", false);
+        animator.SetBool("isTurn", false);
     }
 
     public void Animation(string word)
