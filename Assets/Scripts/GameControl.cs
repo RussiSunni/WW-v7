@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class GameControl : MonoBehaviour
     char[] board;
 
     public Animator fairyAnimator;
-    public GameObject duck;
+
 
     void Start()
     {
@@ -119,8 +118,8 @@ public class GameControl : MonoBehaviour
         subjectScript.NoAnimation();
 
         // reset subject animation
-        var duckScript = duck.GetComponent<Duck>();
-        duckScript.NoAnimation();
+        // var duckScript = duck.GetComponent<Duck>();
+        // duckScript.NoAnimation();
 
         // currentWords = words that have been made    
 
@@ -200,7 +199,7 @@ public class GameControl : MonoBehaviour
                         {
                             if (lookup.Name == "DUCK")
                             {
-                                duckScript.Play();
+                                //  duckScript.Play();
                             }
                             else
                             {
@@ -244,35 +243,11 @@ public class GameControl : MonoBehaviour
                 }
             }
 
-            // // //RULES ----------------         
+            //RULES ----------------         
             currentWords.Clear();
         }
     }
 
-
-    void StartPost()
-    {
-        StartCoroutine(Upload());
-    }
-
-    IEnumerator Upload()
-    {
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        formData.Add(new MultipartFormDataSection("field1=foo&field2=bar"));
-        formData.Add(new MultipartFormFileSection("my file data", "myfile.txt"));
-
-        UnityWebRequest www = UnityWebRequest.Post("http://www.my-server.com/myform", formData);
-        yield return www.SendWebRequest();
-
-        // if (www.result != UnityWebRequest.Result.Success)
-        // {
-        //     Debug.Log(www.error);
-        // }
-        // else
-        // {
-        //     Debug.Log("Form upload complete!");
-        // }
-    }
 
     private bool Search(char[] board, List<DictionaryLookup> dictionaryLookupsList)
     {
