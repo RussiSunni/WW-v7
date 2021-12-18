@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
-    public Transform A4, A5, A6, B4, B5, B6, C4, C5, C6, D4, D5, D6, E4, E5, E6, F4, F5, F6, G4, G5, G6, H4, H5, H6;
+    public Transform A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3, E1, E2, E3, F1, F2, F3, G1, G2, G3, H1, H2, H3;
     public Transform A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     public List<Transform> Col1 = new List<Transform>();
     public List<Transform> Col2 = new List<Transform>();
@@ -33,30 +33,30 @@ public class GameControl : MonoBehaviour
 
     void Start()
     {
-        Col1.Add(A4);
-        Col1.Add(A5);
-        Col1.Add(A6);
-        Col2.Add(B4);
-        Col2.Add(B5);
-        Col2.Add(B6);
-        Col3.Add(C4);
-        Col3.Add(C5);
-        Col3.Add(C6);
-        Col4.Add(D4);
-        Col4.Add(D5);
-        Col4.Add(D6);
-        Col5.Add(E4);
-        Col5.Add(E5);
-        Col5.Add(E6);
-        Col6.Add(F4);
-        Col6.Add(F5);
-        Col6.Add(F6);
-        Col7.Add(G4);
-        Col7.Add(G5);
-        Col7.Add(G6);
-        Col8.Add(H4);
-        Col8.Add(H5);
-        Col8.Add(H6);
+        Col1.Add(A1);
+        Col1.Add(A2);
+        Col1.Add(A3);
+        Col2.Add(B1);
+        Col2.Add(B2);
+        Col2.Add(B3);
+        Col3.Add(C1);
+        Col3.Add(C2);
+        Col3.Add(C3);
+        Col4.Add(D1);
+        Col4.Add(D2);
+        Col4.Add(D3);
+        Col5.Add(E1);
+        Col5.Add(E2);
+        Col5.Add(E3);
+        Col6.Add(F1);
+        Col6.Add(F2);
+        Col6.Add(F3);
+        Col7.Add(G1);
+        Col7.Add(G2);
+        Col7.Add(G3);
+        Col8.Add(H1);
+        Col8.Add(H2);
+        Col8.Add(H3);
 
         Cols.Add(Col1);
         Cols.Add(Col2);
@@ -67,32 +67,32 @@ public class GameControl : MonoBehaviour
         Cols.Add(Col7);
         Cols.Add(Col8);
 
-        Row1.Add(A4);
-        Row1.Add(B4);
-        Row1.Add(C4);
-        Row1.Add(D4);
-        Row1.Add(E4);
-        Row1.Add(F4);
-        Row1.Add(G4);
-        Row1.Add(H4);
+        Row1.Add(A1);
+        Row1.Add(B1);
+        Row1.Add(C1);
+        Row1.Add(D1);
+        Row1.Add(E1);
+        Row1.Add(F1);
+        Row1.Add(G1);
+        Row1.Add(H1);
 
-        Row2.Add(A5);
-        Row2.Add(B5);
-        Row2.Add(C5);
-        Row2.Add(D5);
-        Row2.Add(E5);
-        Row2.Add(F5);
-        Row2.Add(G5);
-        Row2.Add(H5);
+        Row2.Add(A2);
+        Row2.Add(B2);
+        Row2.Add(C2);
+        Row2.Add(D2);
+        Row2.Add(E2);
+        Row2.Add(F2);
+        Row2.Add(G2);
+        Row2.Add(H2);
 
-        Row3.Add(A6);
-        Row3.Add(B6);
-        Row3.Add(C6);
-        Row3.Add(D6);
-        Row3.Add(E6);
-        Row3.Add(F6);
-        Row3.Add(G6);
-        Row3.Add(H6);
+        Row3.Add(A3);
+        Row3.Add(B3);
+        Row3.Add(C3);
+        Row3.Add(D3);
+        Row3.Add(E3);
+        Row3.Add(F3);
+        Row3.Add(G3);
+        Row3.Add(H3);
 
         Rows.Add(Row1);
         Rows.Add(Row2);
@@ -211,8 +211,7 @@ public class GameControl : MonoBehaviour
                                 {
                                     if (lookup.Name == "CAT")
                                     {
-                                        soundManagerScript.playSound(soundManagerScript.catExercise05);
-                                        // User.knowCATWord = true;
+                                        soundManagerScript.playSound(soundManagerScript.catExercise05);                                 
                                     }
                                 }
                             }
@@ -227,7 +226,7 @@ public class GameControl : MonoBehaviour
                             soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
                         }
 
-                        print(lookup.Name);
+                       // print(lookup.Name);
                         // update user table in db
                         var ds = new DataService("DictionaryLookups.db");
 

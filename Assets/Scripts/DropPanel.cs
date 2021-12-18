@@ -26,37 +26,37 @@ public class DropPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         GameObject gameControl = GameObject.Find("GameControl");
         GameControl gameControlScript = gameControl.GetComponent<GameControl>();
 
-        Col1.Add(gameControlScript.A4);
-        Col1.Add(gameControlScript.A5);
-        Col1.Add(gameControlScript.A6);
+        Col1.Add(gameControlScript.A1);
+        Col1.Add(gameControlScript.A2);
+        Col1.Add(gameControlScript.A3);
 
-        Col2.Add(gameControlScript.B4);
-        Col2.Add(gameControlScript.B5);
-        Col2.Add(gameControlScript.B6);
+        Col2.Add(gameControlScript.B1);
+        Col2.Add(gameControlScript.B2);
+        Col2.Add(gameControlScript.B3);
 
-        Col3.Add(gameControlScript.C4);
-        Col3.Add(gameControlScript.C5);
-        Col3.Add(gameControlScript.C6);
+        Col3.Add(gameControlScript.C1);
+        Col3.Add(gameControlScript.C2);
+        Col3.Add(gameControlScript.C3);
 
-        Col4.Add(gameControlScript.D4);
-        Col4.Add(gameControlScript.D5);
-        Col4.Add(gameControlScript.D6);
+        Col4.Add(gameControlScript.D1);
+        Col4.Add(gameControlScript.D2);
+        Col4.Add(gameControlScript.D3);
 
-        Col5.Add(gameControlScript.E4);
-        Col5.Add(gameControlScript.E5);
-        Col5.Add(gameControlScript.E6);
+        Col5.Add(gameControlScript.E1);
+        Col5.Add(gameControlScript.E2);
+        Col5.Add(gameControlScript.E3);
 
-        Col6.Add(gameControlScript.F4);
-        Col6.Add(gameControlScript.F5);
-        Col6.Add(gameControlScript.F6);
+        Col6.Add(gameControlScript.F1);
+        Col6.Add(gameControlScript.F2);
+        Col6.Add(gameControlScript.F3);
 
-        Col7.Add(gameControlScript.G4);
-        Col7.Add(gameControlScript.G5);
-        Col7.Add(gameControlScript.G6);
+        Col7.Add(gameControlScript.G1);
+        Col7.Add(gameControlScript.G2);
+        Col7.Add(gameControlScript.G3);
 
-        Col8.Add(gameControlScript.H4);
-        Col8.Add(gameControlScript.H5);
-        Col8.Add(gameControlScript.H6);
+        Col8.Add(gameControlScript.H1);
+        Col8.Add(gameControlScript.H2);
+        Col8.Add(gameControlScript.H3);
 
         columns.Add(Col1);
         columns.Add(Col2);
