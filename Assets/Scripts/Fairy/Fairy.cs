@@ -37,6 +37,7 @@ public class Fairy : MonoBehaviour
         animator.SetBool("isUmbrella", false);
         animator.SetBool("isBlond", false);
         animator.SetBool("isTurn", false);
+        animator.SetBool("isApple", false);
     }
 
     public void Animation(string word)

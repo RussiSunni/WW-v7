@@ -117,10 +117,7 @@ public class GameControl : MonoBehaviour
         // reset subject animation
         subjectScript.NoAnimation();
 
-        // reset subject animation
-        // var duckScript = duck.GetComponent<Duck>();
-        // duckScript.NoAnimation();
-
+  
         // currentWords = words that have been made    
 
         // load current board
@@ -197,12 +194,6 @@ public class GameControl : MonoBehaviour
                         // if word is a noun, and another object is on the screen
                         if (lookup.Subject)
                         {
-                            if (lookup.Name == "DUCK")
-                            {
-                                //  duckScript.Play();
-                            }
-                            else
-                            {
                                 subjectScript.Animation(lookup.AnimationClipParameter);
                                 soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
 
@@ -214,7 +205,6 @@ public class GameControl : MonoBehaviour
                                         soundManagerScript.playSound(soundManagerScript.catExercise05);                                 
                                     }
                                 }
-                            }
                         }
 
                         // if word is a verb, or another word that does not require another object on the screen

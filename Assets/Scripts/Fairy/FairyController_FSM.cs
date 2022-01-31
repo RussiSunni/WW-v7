@@ -24,6 +24,5 @@ public class FairyController_FSM : MonoBehaviour
         currentState = state;
         currentState.EnterState(this);
     }
-
 }
 
