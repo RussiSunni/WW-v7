@@ -20,7 +20,7 @@ public class Fairy : MonoBehaviour
 
     public Animator animator;
     public Text fairyText;
-    public static bool haveUserDetails, inCatExercise;
+  //  public static bool haveUserDetails, inCatExercise;
 
     public void NoAnimation()
     {

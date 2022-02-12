@@ -14,8 +14,8 @@ public class ExistingDBScript : MonoBehaviour
         ToConsole(dictionaryLookups);
 
         // Users
-        var user = ds.GetUserWords();
-        ToConsole2(user);
+     //   var user = ds.GetUserWords();
+      //  ToConsole2(user);
 
 
 #if UNITY_EDITOR
@@ -32,25 +32,27 @@ public class ExistingDBScript : MonoBehaviour
             //GameControl.dictionaryLookups.Add(dictionaryLookup.Name, dictionaryLookup.Sprite);
             GameControl.dictionaryLookupsList.Add(dictionaryLookup);
 
-            ToConsole(dictionaryLookup.ToString());
+     //       ToConsole(dictionaryLookup.ToString());
         }
+
+        
     }
 
-    private void ToConsole(string msg)
-    {
+   // private void ToConsole(string msg)
+   // {
         // DebugText.text += System.Environment.NewLine + msg;
         // Debug.Log(msg);
-    }
+   // }
 
-    private void ToConsole2(IEnumerable<UserWords> userWords)
-    {
-        foreach (var userWord in userWords)
-        {
-            GameControl.userWordsList.Add(userWord);
+   // private void ToConsole2(IEnumerable<UserWords> userWords)
+   // {
+    //    foreach (var userWord in userWords)
+     //   {
+       //     GameControl.userWordsList.Add(userWord);
             // foreach (var uw in GameControl.userWordsList)
             // {
             //     print(uw.Name);
             // }
-        }
-    }
+      //  }
+   // }
 }

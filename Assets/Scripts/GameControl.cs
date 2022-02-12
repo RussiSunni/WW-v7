@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
-    public Transform A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3, E1, E2, E3, F1, F2, F3, G1, G2, G3, H1, H2, H3;
+    public Transform A1, B1,C1, D1, E1, F1,  G1, H1;
+    //public Transform A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3, E1, E2, E3, F1, F2, F3, G1, G2, G3, H1, H2, H3;
     public Transform A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     public List<Transform> Col1 = new List<Transform>();
     public List<Transform> Col2 = new List<Transform>();
@@ -16,8 +17,8 @@ public class GameControl : MonoBehaviour
     public List<Transform> Col8 = new List<Transform>();
     public List<List<Transform>> Cols = new List<List<Transform>>();
     public List<Transform> Row1 = new List<Transform>();
-    public List<Transform> Row2 = new List<Transform>();
-    public List<Transform> Row3 = new List<Transform>();
+   // public List<Transform> Row2 = new List<Transform>();
+   // public List<Transform> Row3 = new List<Transform>();
     public List<List<Transform>> Rows = new List<List<Transform>>();
     public static List<string> currentWords = new List<string>();
     public static List<DictionaryLookup> dictionaryLookupsList = new List<DictionaryLookup>();
@@ -34,30 +35,30 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         Col1.Add(A1);
-        Col1.Add(A2);
-        Col1.Add(A3);
+        //Col1.Add(A2);
+        //Col1.Add(A3);
         Col2.Add(B1);
-        Col2.Add(B2);
-        Col2.Add(B3);
+        //Col2.Add(B2);
+        //Col2.Add(B3);
         Col3.Add(C1);
-        Col3.Add(C2);
-        Col3.Add(C3);
+        //Col3.Add(C2);
+        //Col3.Add(C3);
         Col4.Add(D1);
-        Col4.Add(D2);
-        Col4.Add(D3);
+        //Col4.Add(D2);
+        //Col4.Add(D3);
         Col5.Add(E1);
-        Col5.Add(E2);
-        Col5.Add(E3);
+        //Col5.Add(E2);
+        //Col5.Add(E3);
         Col6.Add(F1);
-        Col6.Add(F2);
-        Col6.Add(F3);
+        //Col6.Add(F2);
+        //Col6.Add(F3);
         Col7.Add(G1);
-        Col7.Add(G2);
-        Col7.Add(G3);
+        //Col7.Add(G2);
+        //Col7.Add(G3);
         Col8.Add(H1);
-        Col8.Add(H2);
-        Col8.Add(H3);
-
+        //Col8.Add(H2);
+        //Col8.Add(H3);
+        
         Cols.Add(Col1);
         Cols.Add(Col2);
         Cols.Add(Col3);
@@ -76,27 +77,27 @@ public class GameControl : MonoBehaviour
         Row1.Add(G1);
         Row1.Add(H1);
 
-        Row2.Add(A2);
-        Row2.Add(B2);
-        Row2.Add(C2);
-        Row2.Add(D2);
-        Row2.Add(E2);
-        Row2.Add(F2);
-        Row2.Add(G2);
-        Row2.Add(H2);
+        //Row2.Add(A2);
+        //Row2.Add(B2);
+        //Row2.Add(C2);
+        //Row2.Add(D2);
+        //Row2.Add(E2);
+        //Row2.Add(F2);
+        //Row2.Add(G2);
+        //Row2.Add(H2);
 
-        Row3.Add(A3);
-        Row3.Add(B3);
-        Row3.Add(C3);
-        Row3.Add(D3);
-        Row3.Add(E3);
-        Row3.Add(F3);
-        Row3.Add(G3);
-        Row3.Add(H3);
+        //Row3.Add(A3);
+        //Row3.Add(B3);
+        //Row3.Add(C3);
+        //Row3.Add(D3);
+        //Row3.Add(E3);
+        //Row3.Add(F3);
+        //Row3.Add(G3);
+        //Row3.Add(H3);
 
-        Rows.Add(Row1);
-        Rows.Add(Row2);
-        Rows.Add(Row3);
+       // Rows.Add(Row1);
+        // Rows.Add(Row2);
+        // Rows.Add(Row3);
 
     }
 
@@ -117,7 +118,7 @@ public class GameControl : MonoBehaviour
         // reset subject animation
         subjectScript.NoAnimation();
 
-  
+
         // currentWords = words that have been made    
 
         // load current board
@@ -133,78 +134,85 @@ public class GameControl : MonoBehaviour
         }
 
         // Row 2
-        char[] board2 = new char[8];
-        for (int i = 0; i < 8; i++)
-        {
-            if (Row2[i].childCount > 0)
-            {
-                board2[i] = Row2[i].GetChild(0).gameObject.name[0];
-            }
-        }
+        //char[] board2 = new char[8];
+        //for (int i = 0; i < 8; i++)
+        //{
+        //    if (Row2[i].childCount > 0)
+        //    {
+        //        board2[i] = Row2[i].GetChild(0).gameObject.name[0];
+        //    }
+        //}
 
         // Row 3
-        char[] board3 = new char[8];
-        for (int i = 0; i < 8; i++)
-        {
-            if (Row3[i].childCount > 0)
-            {
-                board3[i] = Row3[i].GetChild(0).gameObject.name[0];
-            }
-        }
+        //char[] board3 = new char[8];
+        //for (int i = 0; i < 8; i++)
+        //{
+        //    if (Row3[i].childCount > 0)
+        //    {
+        //        board3[i] = Row3[i].GetChild(0).gameObject.name[0];
+        //    }
+        //}
 
         // for the exercise to find the name
-        if (isNameExercise)
-        {
-            string nameString01 = new string(board1);
-            string nameString02 = new string(board2);
-            string nameString03 = new string(board3);
-            //string nameString = nameString + nameString02 + nameString03;
+        // if (isNameExercise)
+        // {
+        //    string nameString01 = new string(board1);
+        //string nameString02 = new string(board2);
+        //string nameString03 = new string(board3);
+        //string nameString = nameString + nameString02 + nameString03;
 
-            userDetails.Name = nameString01;
-        }
+        //   userDetails.Name = nameString01;
+        // }
 
 
         // for the exercise to find the age
-        if (isAgeExercise)
-        {
-            string ageString01 = new string(board1);
-            string ageString02 = new string(board2);
-            string ageString03 = new string(board3);
-            //string nameString = nameString + nameString02 + nameString03;
+        //  if (isAgeExercise)
+        //  {
+        //     string ageString01 = new string(board1);
+        // string ageString02 = new string(board2);
+        //string ageString03 = new string(board3);
+        //string nameString = nameString + nameString02 + nameString03;
 
-            userDetails.Age = ageString01;
-        }
+        //    userDetails.Age = ageString01;
+        // }
 
         // for other exercises or regular dictionary
-        else
-        {
-            // for 3 rows
-            // run the function      
-            Search(board1, dictionaryLookupsList);
-            Search(board2, dictionaryLookupsList);
-            Search(board3, dictionaryLookupsList);
+        // else
+        // {
+        // for 3 rows
+        // run the function      
 
-            // for this string in Current Words, use this
-            for (int i = 0; i < currentWords.Count; i++)
+       // print(dictionaryLookupsList.Count);
+
+        Search(board1, dictionaryLookupsList);
+        // Search(board2, dictionaryLookupsList);
+        //Search(board3, dictionaryLookupsList);
+
+        // for this string in Current Words, use this
+        for (int i = 0; i < currentWords.Count; i++)
+        {
+           // print(currentWords.Count);
+            foreach (var lookup in dictionaryLookupsList)
             {
-                foreach (var lookup in dictionaryLookupsList)
+                // print(lookup.Name);
+                if (currentWords.Count > 0)
                 {
                     if (currentWords[i] == lookup.Name)
                     {
                         // if word is a noun, and another object is on the screen
                         if (lookup.Subject)
                         {
-                                subjectScript.Animation(lookup.AnimationClipParameter);
-                                soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+                            subjectScript.Animation(lookup.AnimationClipParameter);
+                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
 
-                                // Cat exercise 02 - Fairy saying thanks
-                                if (Fairy.inCatExercise)
-                                {
-                                    if (lookup.Name == "CAT")
-                                    {
-                                        soundManagerScript.playSound(soundManagerScript.catExercise05);                                 
-                                    }
-                                }
+                            // Cat exercise 02 - Fairy saying thanks
+                            //if (Fairy.inCatExercise)
+                            //{
+                            //    if (lookup.Name == "CAT")
+                            //    {
+                            //        soundManagerScript.playSound(soundManagerScript.catExercise05);
+                            //    }
+                            //}
                         }
 
                         // if word is a verb, or another word that does not require another object on the screen
@@ -216,21 +224,22 @@ public class GameControl : MonoBehaviour
                             soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
                         }
 
-                       // print(lookup.Name);
+                        // print(lookup.Name);
                         // update user table in db
-                        var ds = new DataService("DictionaryLookups.db");
+                        //var ds = new DataService("DictionaryLookups.db");
 
-                        if (!GameControl.userWordNameList.Contains(lookup.Name))
-                            userWordsList.Add(ds.CreateUserWord(lookup.Name));
+                        //if (!GameControl.userWordNameList.Contains(lookup.Name))
+                        //    userWordsList.Add(ds.CreateUserWord(lookup.Name));
 
-                        foreach (var uw in userWordsList)
-                        {
-                            print(uw.Name);
-                            userWordNameList.Add(uw.Name);
-                        }
+                        //foreach (var uw in userWordsList)
+                        //{
+                        //    print(uw.Name);
+                        //    userWordNameList.Add(uw.Name);
+                        //}
                     }
                 }
             }
+            //  }
 
             //RULES ----------------         
             currentWords.Clear();
@@ -277,6 +286,8 @@ public class GameControl : MonoBehaviour
         {
             currentWords.Add(word);
         }
+
+        print(currentWords.Count);
 
         return found;
     }

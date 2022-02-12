@@ -45,7 +45,7 @@ public class FairyGetUserDetailsState : FairyBaseState
         }
         else if (GameControl.userDetails.Age != null && !GameControl.isAgeExercise)
         {
-            Fairy.haveUserDetails = true;
+      //      Fairy.haveUserDetails = true;
         }
 
         var ds = new DataService("DictionaryLookups.db");

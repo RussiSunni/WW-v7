@@ -27,36 +27,36 @@ public class DropPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         GameControl gameControlScript = gameControl.GetComponent<GameControl>();
 
         Col1.Add(gameControlScript.A1);
-        Col1.Add(gameControlScript.A2);
-        Col1.Add(gameControlScript.A3);
+        //Col1.Add(gameControlScript.A2);
+        //Col1.Add(gameControlScript.A3);
 
         Col2.Add(gameControlScript.B1);
-        Col2.Add(gameControlScript.B2);
-        Col2.Add(gameControlScript.B3);
+        //Col2.Add(gameControlScript.B2);
+        //Col2.Add(gameControlScript.B3);
 
         Col3.Add(gameControlScript.C1);
-        Col3.Add(gameControlScript.C2);
-        Col3.Add(gameControlScript.C3);
+        //Col3.Add(gameControlScript.C2);
+        //Col3.Add(gameControlScript.C3);
 
         Col4.Add(gameControlScript.D1);
-        Col4.Add(gameControlScript.D2);
-        Col4.Add(gameControlScript.D3);
+        //Col4.Add(gameControlScript.D2);
+        //Col4.Add(gameControlScript.D3);
 
         Col5.Add(gameControlScript.E1);
-        Col5.Add(gameControlScript.E2);
-        Col5.Add(gameControlScript.E3);
+        //Col5.Add(gameControlScript.E2);
+        //Col5.Add(gameControlScript.E3);
 
         Col6.Add(gameControlScript.F1);
-        Col6.Add(gameControlScript.F2);
-        Col6.Add(gameControlScript.F3);
+        //Col6.Add(gameControlScript.F2);
+        //Col6.Add(gameControlScript.F3);
 
         Col7.Add(gameControlScript.G1);
-        Col7.Add(gameControlScript.G2);
-        Col7.Add(gameControlScript.G3);
+        //Col7.Add(gameControlScript.G2);
+        //Col7.Add(gameControlScript.G3);
 
         Col8.Add(gameControlScript.H1);
-        Col8.Add(gameControlScript.H2);
-        Col8.Add(gameControlScript.H3);
+        //Col8.Add(gameControlScript.H2);
+        //Col8.Add(gameControlScript.H3);
 
         columns.Add(Col1);
         columns.Add(Col2);
