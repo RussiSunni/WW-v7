@@ -221,7 +221,7 @@ public class GameControl : MonoBehaviour
                             // print(currentWords[i]);
                             // print(lookup.AnimationClipParameter);
                             fairyScript.Animation(lookup.AnimationClipParameter);
-                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
+                           // soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
                         }
 
                         // print(lookup.Name);
