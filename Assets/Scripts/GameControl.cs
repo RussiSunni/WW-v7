@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
-    public Transform A1, B1,C1, D1, E1, F1,  G1, H1;
-    //public Transform A1, A2, A3, B1, B2, B3, C1, C2, C3, D1, D2, D3, E1, E2, E3, F1, F2, F3, G1, G2, G3, H1, H2, H3;
+    public Transform A1, B1,C1, D1, E1, F1,  G1, H1;    
     public Transform A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     public List<Transform> Col1 = new List<Transform>();
     public List<Transform> Col2 = new List<Transform>();
@@ -16,9 +15,7 @@ public class GameControl : MonoBehaviour
     public List<Transform> Col7 = new List<Transform>();
     public List<Transform> Col8 = new List<Transform>();
     public List<List<Transform>> Cols = new List<List<Transform>>();
-    public List<Transform> Row1 = new List<Transform>();
-   // public List<Transform> Row2 = new List<Transform>();
-   // public List<Transform> Row3 = new List<Transform>();
+    public List<Transform> Row1 = new List<Transform>();   
     public List<List<Transform>> Rows = new List<List<Transform>>();
     public static List<string> currentWords = new List<string>();
     public static List<DictionaryLookup> dictionaryLookupsList = new List<DictionaryLookup>();
@@ -28,36 +25,20 @@ public class GameControl : MonoBehaviour
     public static bool isNameExercise, isAgeExercise;
     string word;
     char[] board;
+    public List<DictionaryLookup> dictionaryLookups = new List<DictionaryLookup>();
 
     public Animator fairyAnimator;
 
-
     void Start()
     {
-        Col1.Add(A1);
-        //Col1.Add(A2);
-        //Col1.Add(A3);
-        Col2.Add(B1);
-        //Col2.Add(B2);
-        //Col2.Add(B3);
-        Col3.Add(C1);
-        //Col3.Add(C2);
-        //Col3.Add(C3);
-        Col4.Add(D1);
-        //Col4.Add(D2);
-        //Col4.Add(D3);
-        Col5.Add(E1);
-        //Col5.Add(E2);
-        //Col5.Add(E3);
-        Col6.Add(F1);
-        //Col6.Add(F2);
-        //Col6.Add(F3);
-        Col7.Add(G1);
-        //Col7.Add(G2);
-        //Col7.Add(G3);
-        Col8.Add(H1);
-        //Col8.Add(H2);
-        //Col8.Add(H3);
+        Col1.Add(A1);        
+        Col2.Add(B1);        
+        Col3.Add(C1);        
+        Col4.Add(D1);        
+        Col5.Add(E1);        
+        Col6.Add(F1);        
+        Col7.Add(G1);        
+        Col8.Add(H1);        
         
         Cols.Add(Col1);
         Cols.Add(Col2);
@@ -77,28 +58,166 @@ public class GameControl : MonoBehaviour
         Row1.Add(G1);
         Row1.Add(H1);
 
-        //Row2.Add(A2);
-        //Row2.Add(B2);
-        //Row2.Add(C2);
-        //Row2.Add(D2);
-        //Row2.Add(E2);
-        //Row2.Add(F2);
-        //Row2.Add(G2);
-        //Row2.Add(H2);
+        // Populate the list of recorded words.
+        var jump = new DictionaryLookup();
+        jump.Id = 1;
+        jump.Name = "JUMP";
+        jump.AnimationClipParameter = "isJump";
+        jump.Subject = false;
+        jump.AudioClipNumber = 0;
+        dictionaryLookups.Add(jump);
 
-        //Row3.Add(A3);
-        //Row3.Add(B3);
-        //Row3.Add(C3);
-        //Row3.Add(D3);
-        //Row3.Add(E3);
-        //Row3.Add(F3);
-        //Row3.Add(G3);
-        //Row3.Add(H3);
+        var hello = new DictionaryLookup();
+        hello.Id = 2;
+        hello.Name = "HELLO";
+        hello.AnimationClipParameter = "isHello";
+        hello.Subject = false;
+        hello.AudioClipNumber = 1;
+        dictionaryLookups.Add(hello);
 
-       // Rows.Add(Row1);
-        // Rows.Add(Row2);
-        // Rows.Add(Row3);
+        var sit = new DictionaryLookup();
+        sit.Id = 3;
+        sit.Name = "SIT";
+        sit.AnimationClipParameter = "isSit";
+        sit.Subject = false;
+        sit.AudioClipNumber = 2;
+        dictionaryLookups.Add(sit);
 
+        var cat = new DictionaryLookup();
+        cat.Id = 4;
+        cat.Name = "CAT";
+        cat.AnimationClipParameter = "isCat";
+        cat.Subject = true;
+        cat.AudioClipNumber = 3;
+        dictionaryLookups.Add(cat);
+
+        var bus = new DictionaryLookup();
+        bus.Id = 5;
+        bus.Name = "BUS";
+        bus.AnimationClipParameter = "isBus";
+        bus.Subject = false;
+        bus.AudioClipNumber = 4;
+        dictionaryLookups.Add(bus);
+
+        var tail = new DictionaryLookup();
+        tail.Id = 6;
+        tail.Name = "TAIL";
+        tail.AnimationClipParameter = "isTail";
+        tail.Subject = false;
+        tail.AudioClipNumber = 5;
+        dictionaryLookups.Add(tail);
+
+        var night = new DictionaryLookup();
+        night.Id = 7;
+        night.Name = "NIGHT";
+        night.AnimationClipParameter = "isNight";
+        night.Subject = false;
+        night.AudioClipNumber = 6;
+        dictionaryLookups.Add(night);
+
+        var queen = new DictionaryLookup();
+        queen.Id = 8;
+        queen.Name = "QUEEN";
+        queen.AnimationClipParameter = "isQueen";
+        queen.Subject = false;
+        queen.AudioClipNumber = 7;
+        dictionaryLookups.Add(queen);
+
+        var salt = new DictionaryLookup();
+        salt.Id = 9;
+        salt.Name = "SALT";
+        salt.AnimationClipParameter = "isSalt";
+        salt.Subject = false;
+        salt.AudioClipNumber = 8;
+        dictionaryLookups.Add(salt);
+
+        var umbrella = new DictionaryLookup();
+        umbrella.Id = 10;
+        umbrella.Name = "UMBRELLA";
+        umbrella.AnimationClipParameter = "isUmbrella";
+        umbrella.Subject = false;
+        umbrella.AudioClipNumber = 9;
+        dictionaryLookups.Add(umbrella);
+
+        var astronaut = new DictionaryLookup();
+        astronaut.Id = 11;
+        astronaut.Name = "ASTRONAUT";
+        astronaut.AnimationClipParameter = "isAstronaut";
+        astronaut.Subject = false;
+        astronaut.AudioClipNumber = 10;
+        dictionaryLookups.Add(astronaut);
+
+        var blond = new DictionaryLookup();
+        blond.Id = 12;
+        blond.Name = "BLOND";
+        blond.AnimationClipParameter = "isBlond";
+        blond.Subject = false;
+        blond.AudioClipNumber = 11;
+        dictionaryLookups.Add(blond);
+
+        var dog = new DictionaryLookup();
+        dog.Id = 13;
+        dog.Name = "DOG";
+        dog.AnimationClipParameter = "isDog";
+        dog.Subject = true;
+        dog.AudioClipNumber = 12;
+        dictionaryLookups.Add(dog);
+
+        var upset = new DictionaryLookup();
+        upset.Id = 14;
+        upset.Name = "UPSET";
+        upset.AnimationClipParameter = "isUpset";
+        upset.Subject = false;
+        upset.AudioClipNumber = 13;
+        dictionaryLookups.Add(upset);
+
+        var rain = new DictionaryLookup();
+        rain.Id = 15;
+        rain.Name = "RAIN";
+        rain.AnimationClipParameter = "isRain";
+        rain.Subject = false;
+        rain.AudioClipNumber = 14;
+        dictionaryLookups.Add(rain);
+
+        var hi = new DictionaryLookup();
+        hi.Id = 16;
+        hi.Name = "HI";
+        hi.AnimationClipParameter = "isHi";
+        hi.Subject = false;
+        hi.AudioClipNumber = 15;
+        dictionaryLookups.Add(hi);
+
+        var turn = new DictionaryLookup();
+        turn.Id = 17;
+        turn.Name = "TURN";
+        turn.AnimationClipParameter = "isTurn";
+        turn.Subject = false;
+        turn.AudioClipNumber = 16;
+        dictionaryLookups.Add(turn);
+
+        var hat = new DictionaryLookup();
+        hat.Id = 18;
+        hat.Name = "HAT";
+        hat.AnimationClipParameter = "isHat";
+        hat.Subject = false;
+        hat.AudioClipNumber = 17;
+        dictionaryLookups.Add(hat);
+
+        var duck = new DictionaryLookup();
+        duck.Id = 19;
+        duck.Name = "DUCK";
+        duck.AnimationClipParameter = "isDuck";
+        duck.Subject = true;
+        duck.AudioClipNumber = 18;
+        dictionaryLookups.Add(duck);
+
+        var apple = new DictionaryLookup();
+        apple.Id = 20;
+        apple.Name = "APPLE";
+        apple.AnimationClipParameter = "isApple";
+        apple.Subject = false;
+        apple.AudioClipNumber = 19;
+        dictionaryLookups.Add(apple);
     }
 
     public void UpdateStage()
@@ -151,40 +270,9 @@ public class GameControl : MonoBehaviour
         //    {
         //        board3[i] = Row3[i].GetChild(0).gameObject.name[0];
         //    }
-        //}
+        //}     
 
-        // for the exercise to find the name
-        // if (isNameExercise)
-        // {
-        //    string nameString01 = new string(board1);
-        //string nameString02 = new string(board2);
-        //string nameString03 = new string(board3);
-        //string nameString = nameString + nameString02 + nameString03;
-
-        //   userDetails.Name = nameString01;
-        // }
-
-
-        // for the exercise to find the age
-        //  if (isAgeExercise)
-        //  {
-        //     string ageString01 = new string(board1);
-        // string ageString02 = new string(board2);
-        //string ageString03 = new string(board3);
-        //string nameString = nameString + nameString02 + nameString03;
-
-        //    userDetails.Age = ageString01;
-        // }
-
-        // for other exercises or regular dictionary
-        // else
-        // {
-        // for 3 rows
-        // run the function      
-
-       // print(dictionaryLookupsList.Count);
-
-        Search(board1, dictionaryLookupsList);
+        Search(board1, dictionaryLookups);
         // Search(board2, dictionaryLookupsList);
         //Search(board3, dictionaryLookupsList);
 
@@ -192,7 +280,7 @@ public class GameControl : MonoBehaviour
         for (int i = 0; i < currentWords.Count; i++)
         {
            // print(currentWords.Count);
-            foreach (var lookup in dictionaryLookupsList)
+            foreach (var lookup in dictionaryLookups)
             {
                 // print(lookup.Name);
                 if (currentWords.Count > 0)
@@ -203,39 +291,15 @@ public class GameControl : MonoBehaviour
                         if (lookup.Subject)
                         {
                             subjectScript.Animation(lookup.AnimationClipParameter);
-                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
-
-                            // Cat exercise 02 - Fairy saying thanks
-                            //if (Fairy.inCatExercise)
-                            //{
-                            //    if (lookup.Name == "CAT")
-                            //    {
-                            //        soundManagerScript.playSound(soundManagerScript.catExercise05);
-                            //    }
-                            //}
+                            soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);                            
                         }
 
                         // if word is a verb, or another word that does not require another object on the screen
                         else
-                        {
-                            // print(currentWords[i]);
-                            // print(lookup.AnimationClipParameter);
+                        {                         
                             fairyScript.Animation(lookup.AnimationClipParameter);
                            // soundManagerScript.playSound(soundManagerScript.wordSoundList[lookup.AudioClipNumber]);
-                        }
-
-                        // print(lookup.Name);
-                        // update user table in db
-                        //var ds = new DataService("DictionaryLookups.db");
-
-                        //if (!GameControl.userWordNameList.Contains(lookup.Name))
-                        //    userWordsList.Add(ds.CreateUserWord(lookup.Name));
-
-                        //foreach (var uw in userWordsList)
-                        //{
-                        //    print(uw.Name);
-                        //    userWordNameList.Add(uw.Name);
-                        //}
+                        }                        
                     }
                 }
             }
@@ -247,12 +311,13 @@ public class GameControl : MonoBehaviour
     }
 
 
-    private bool Search(char[] board, List<DictionaryLookup> dictionaryLookupsList)
+    private bool Search(char[] board, List<DictionaryLookup> dictionaryLookups)
     {
         for (int i = 0; i < board.Length; i++)
         {
-            foreach (DictionaryLookup dictionaryLookup in dictionaryLookupsList)
+            foreach (DictionaryLookup dictionaryLookup in dictionaryLookups)
             {
+                //Debug.Log(dictionaryLookup);              
                 if (board[i] == dictionaryLookup.Name[0] && dfs(board, i, 0, dictionaryLookup.Name))
                 {
                     //print(words[h]);
@@ -287,7 +352,7 @@ public class GameControl : MonoBehaviour
             currentWords.Add(word);
         }
 
-        print(currentWords.Count);
+        //print(currentWords.Count);
 
         return found;
     }
